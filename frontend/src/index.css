@@ -1,0 +1,926 @@
+:root {
+  /* 5-Star Luxury Color Palette */
+  --bg-primary: #070b14;
+  --bg-surface: #0d1527;
+  --bg-card: rgba(13, 21, 39, 0.82);
+  --bg-card-hover: rgba(20, 31, 56, 0.9);
+  --bg-elevated: #131f38;
+  --bg-glass: rgba(10, 16, 30, 0.75);
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-accent: rgba(212, 175, 55, 0.28);
+  --border-accent-strong: rgba(212, 175, 55, 0.65);
+  
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #f5dfa2;
+  
+  /* Luxury Gold & Champagne Accents */
+  --gold-primary: #d4af37;
+  --gold-hover: #e5c158;
+  --gold-dark: #a37f20;
+  --gold-light: #fdf6e2;
+  --gold-champagne: #f3e5c8;
+  --gold-glow: rgba(212, 175, 55, 0.22);
+  --gold-gradient: linear-gradient(135deg, #dfb95c 0%, #c5a059 50%, #9e7d28 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #ebd08d 0%, #d4af37 50%, #b89332 100%);
+  
+  /* Semantics */
+  --indigo-primary: #6366f1;
+  --emerald-primary: #10b981;
+  --rose-primary: #f43f5e;
+  --amber-primary: #f59e0b;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Effects */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 8px 30px rgba(212, 175, 55, 0.25);
+  --glass-backdrop: blur(18px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF9F5;
+  color: #1C1C1C;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Glassmorphism Containers */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--border-accent);
+}
+
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+/* Luxury Interactive Card */
+.luxury-card {
+  background: linear-gradient(180deg, rgba(16, 25, 46, 0.8) 0%, rgba(10, 16, 31, 0.95) 100%);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.65rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #0b101b;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
+  background: var(--gold-gradient-hover);
+  color: #000;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.09);
+  transform: translateY(-1px);
+}
+
+.btn-gold-outline {
+  background: transparent;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+}
+
+.btn-gold-outline:hover {
+  background: var(--gold-primary);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fecdd3;
+}
+
+.btn-danger:hover {
+  background: rgba(244, 63, 94, 0.3);
+  border-color: rgba(244, 63, 94, 0.6);
+  color: #fff;
+}
+
+.btn-success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #a7f3d0;
+}
+
+.btn-success:hover {
+  background: rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  padding: 0.95rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-pending { 
+  background: #FEF3C7; 
+  color: #92400E; 
+  border: 1px solid #FCD34D; 
+}
+.badge-approved { 
+  background: #E0F2FE; 
+  color: #0369A1; 
+  border: 1px solid #7DD3FC; 
+}
+.badge-confirmed { 
+  background: #E8F5E9; 
+  color: #0B3B2C; 
+  border: 1px solid #A5D6A7; 
+}
+.badge-rejected { 
+  background: #FEE2E2; 
+  color: #991B1B; 
+  border: 1px solid #FCA5A5; 
+}
+.badge-cancelled { 
+  background: #F1F0EC; 
+  color: #4A4A4A; 
+  border: 1px solid #D6D2C9; 
+}
+.badge-gold {
+  background: #0B3B2C;
+  color: #FFFFFF;
+  border: 1px solid #0B3B2C;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(13, 21, 39, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  background: rgba(17, 27, 49, 0.95);
+}
+
+.form-select option {
+  background: #0d1527;
+  color: var(--text-primary);
+}
+
+/* Luxury Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+.luxury-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.luxury-table th {
+  background: rgba(10, 16, 30, 0.95);
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.luxury-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  vertical-align: middle;
+  background: rgba(13, 21, 39, 0.4);
+  transition: background 0.2s ease;
+}
+
+.luxury-table tr:hover td {
+  background: rgba(212, 175, 55, 0.04);
+}
+
+.luxury-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Tab Navigation */
+.tabs-container {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 0.7rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.tab-btn.active {
+  color: #0b101b;
+  background: var(--gold-gradient);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+/* Stat Widget Cards */
+.stat-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-primary);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  flex-shrink: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Mobile & Responsive Utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 85px;
+}
+
+@media (max-width: 1080px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1081px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   ROSEWOOD-INSPIRED HAUTE LUXURY EDITORIAL DESIGN SYSTEM
+   ============================================================ */
+.rosewood-page {
+  background-color: #FBF9F5;
+  color: #1C1C1C;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.rosewood-page h1,
+.rosewood-page h2,
+.rosewood-page h3,
+.rosewood-page .font-editorial {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #141414;
+}
+
+.rosewood-page .glass-card,
+.rosewood-page .luxury-card,
+.rosewood-page .glass-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #E8E2D8 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  color: #1C1C1C !important;
+}
+
+.rosewood-page .glass-card:hover,
+.rosewood-page .luxury-card:hover {
+  border-color: #D4CDC2 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07) !important;
+}
+
+.rosewood-page .btn-gold {
+  background: #0B3B2C !important;
+  color: #FFFFFF !important;
+  border: 1px solid #0B3B2C !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.rosewood-page .btn-gold:hover {
+  background: #06261B !important;
+  border-color: #06261B !important;
+  color: #FFFFFF !important;
+}
+
+.rosewood-page .btn-outline {
+  background: transparent !important;
+  color: #1C1C1C !important;
+  border: 1px solid #1C1C1C !important;
+  border-radius: 2px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.rosewood-page .btn-outline:hover {
+  background: #1C1C1C !important;
+  color: #FFFFFF !important;
+}
+
+.rosewood-page .form-input,
+.rosewood-page input:not([type="checkbox"]):not([type="radio"]),
+.rosewood-page select,
+.rosewood-page textarea {
+  background-color: #FBF9F5 !important;
+  border: 1px solid #E2DCD2 !important;
+  color: #1C1C1C !important;
+  border-radius: 2px !important;
+}
+
+.rosewood-page .form-input:focus,
+.rosewood-page input:focus,
+.rosewood-page select:focus,
+.rosewood-page textarea:focus {
+  border-color: #0B3B2C !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 1px #0B3B2C !important;
+}
+
+.rosewood-page .badge-gold {
+  background: #0B3B2C !important;
+  color: #FFFFFF !important;
+  border-radius: 2px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+}
+
+.rosewood-page .badge-outline {
+  background: #F5F2EB !important;
+  border: 1px solid #E2DCD2 !important;
+  color: #1C1C1C !important;
+  border-radius: 2px !important;
+}
+
+/* Badges in Rosewood Theme */
+.rosewood-page .badge {
+  border-radius: 2px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.3rem 0.75rem !important;
+  font-size: 0.72rem !important;
+}
+.rosewood-page .badge-pending { 
+  background: #FEF3C7 !important; 
+  color: #92400E !important; 
+  border: 1px solid #FCD34D !important; 
+}
+.rosewood-page .badge-approved { 
+  background: #E0F2FE !important; 
+  color: #0369A1 !important; 
+  border: 1px solid #7DD3FC !important; 
+}
+.rosewood-page .badge-confirmed { 
+  background: #E8F5E9 !important; 
+  color: #0B3B2C !important; 
+  border: 1px solid #A5D6A7 !important; 
+}
+.rosewood-page .badge-rejected { 
+  background: #FEE2E2 !important; 
+  color: #991B1B !important; 
+  border: 1px solid #FCA5A5 !important; 
+}
+.rosewood-page .badge-cancelled { 
+  background: #F1F0EC !important; 
+  color: #4A4A4A !important; 
+  border: 1px solid #D6D2C9 !important; 
+}
+
+/* Tabs in Rosewood Theme */
+.rosewood-page .tabs-container {
+  border-bottom: 1px solid #E8E2D8 !important;
+}
+.rosewood-page .tab-btn {
+  color: #555555 !important;
+  border-radius: 2px !important;
+  font-size: 0.88rem !important;
+  transition: all 0.2s ease !important;
+}
+.rosewood-page .tab-btn:hover {
+  color: #0B3B2C !important;
+  background: #F5F2EB !important;
+}
+.rosewood-page .tab-btn.active {
+  color: #FFFFFF !important;
+  background: #0B3B2C !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+/* Stat Cards in Rosewood Theme */
+.rosewood-page .stat-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E8E2D8 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 2px !important;
+}
+.rosewood-page .stat-card:hover {
+  border-color: #0B3B2C !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+}
+.rosewood-page .stat-icon {
+  border-radius: 2px !important;
+  background: #F5F2EB !important;
+  color: #0B3B2C !important;
+  border: 1px solid #E2DCD2 !important;
+}
+
+/* Table in Rosewood Theme */
+.rosewood-page .luxury-table th {
+  background: #FAF9F5 !important;
+  color: #141414 !important;
+  border-bottom: 2px solid #E8E2D8 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+}
+.rosewood-page .luxury-table td {
+  border-bottom: 1px solid #E8E2D8 !important;
+  color: #333333 !important;
+}
+.rosewood-page .luxury-table tr:hover {
+  background: #FAF9F5 !important;
+}
+
+/* Modal in Rosewood Theme */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(4px) !important;
+}
+.modal-container {
+  background: #FFFFFF !important;
+  color: #1C1C1C !important;
+  border: 1px solid #E8E2D8 !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+.modal-header {
+  border-bottom: 1px solid #E8E2D8 !important;
+  color: #141414 !important;
+}
+.modal-header h3 {
+  color: #141414 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.modal-footer {
+  border-top: 1px solid #E8E2D8 !important;
+}
+
+.rosewood-btn-green {
+  background: #0B3B2C;
+  color: #FFFFFF;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid #0B3B2C;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.rosewood-btn-green:hover {
+  background: #06261B;
+  border-color: #06261B;
+  color: #FFFFFF;
+}
+
+.rosewood-btn-outline {
+  background: transparent;
+  color: #1C1C1C;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid #1C1C1C;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.rosewood-btn-outline:hover {
+  background: #1C1C1C;
+  color: #FFFFFF;
+}
+
+.rosewood-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E2D8;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rosewood-card:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  border-color: #D4CDC2;
+}
+
+.rosewood-input {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  background: #FBF9F5;
+  border: 1px solid #E2DCD2;
+  border-radius: 2px;
+  color: #1C1C1C;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.rosewood-input:focus {
+  outline: none;
+  border-color: #0B3B2C;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px #0B3B2C;
+}
+
+/* ============================================================
+   ROSEWOOD LUXURY DUAL-TIER NAVBAR SYSTEM
+   ============================================================ */
+.rosewood-navbar-wrapper {
+  background-color: #FAF9F5;
+  border-bottom: 1px solid #ECE7DF;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.rosewood-navbar-wrapper.scrolled {
+  background-color: rgba(250, 249, 245, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.rosewood-top-bar {
+  border-bottom: 1px solid #ECE7DF;
+  padding: 0.55rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.rosewood-top-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #141414;
+  text-decoration: none;
+  border-bottom: 1.5px solid #141414;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.rosewood-top-link:hover {
+  opacity: 0.7;
+}
+
+.rosewood-brand-center {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #141414;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  transition: opacity 0.2s ease;
+}
+
+.rosewood-brand-center:hover {
+  opacity: 0.85;
+}
+
+.rosewood-main-nav {
+  padding: 0.65rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.rosewood-nav-link {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #1C1C1C;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.rosewood-nav-link:hover {
+  color: #0B3B2C;
+}
+
+.rosewood-nav-link.active {
+  color: #0B3B2C;
+  font-weight: 600;
+}
+
+.rosewood-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #0B3B2C;
+}
+
+.rosewood-brand-property {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: #141414;
+  flex-shrink: 0;
+}
+
+.rosewood-brand-property-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #141414;
+}
+
+.rosewood-brand-property-sub {
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rosewood-reserve-btn {
+  background: #0B3B2C;
+  color: #FFFFFF;
+  padding: 0.75rem 1.85rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid #0B3B2C;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.rosewood-reserve-btn:hover {
+  background: #06261B;
+  border-color: #06261B;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1080px) {
+  .rosewood-top-bar {
+    display: none;
+  }
+  .rosewood-main-nav {
+    padding: 0.85rem 1.25rem;
+  }
+}
+
